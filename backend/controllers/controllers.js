@@ -30,10 +30,13 @@ export async function getAllSuivi(req, res) {
 
 export async function deleteSuiviById(req, res) {
     try {
-        const supp = await chat.findByIdAndDelete(req.params.id);
+        const supp = await suivi.findByIdAndDelete(req.params.id);
+        if (!supp) {
+            return res.status(404).Json({ message: "Suivi non trouvé" })
+        }
         res.json({message : "Le suivi a bien été supprimés"})
     } catch (error) {
-        res.status(500).json({ message : "Le suivi n'existe pas" });
+        res.status(500).json({ message : error.message });
     }
 }
 
