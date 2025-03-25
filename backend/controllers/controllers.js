@@ -40,10 +40,14 @@ export async function deleteSuiviById(req, res) {
     }
 }
 
-export async function postModifySuivi(req, res) {
+export async function postModifySuivi(req, res, next) {
     try {
-        console.log("test");
+        const modify = await suivi.findByIdAndUpdate({_id: req.params.id}, req.body);
+        if (!modify) {
+            return res.status(404).Json({ message: "Suivi non trouvé" })
+        }
     } catch (error) {
         res.status(500).json({ message : error.message });
     }
+    next()
 }
