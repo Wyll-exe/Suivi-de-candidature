@@ -1,5 +1,5 @@
 // controllers
-import { suivi, suiviValidation } from "../model/model";
+import { suivi, suiviValidation } from "../model/model.js";
 
 export async function postSuivi(req, res) {
     try {

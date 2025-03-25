@@ -1,5 +1,5 @@
 // model pour la bdd
-import Joi, { required } from "joi";
+import Joi from "joi";
 import mongoose from "mongoose";
 
 const suiviSchema = new mongoose.Schema({
