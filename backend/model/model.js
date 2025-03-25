@@ -11,8 +11,8 @@ const suiviSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    link : {
-        type: String,
+    job_link : {
+        type: String
     },
     send_date : {
         type: Number,
@@ -38,10 +38,15 @@ const suiviValidation = Joi.object({
     .messages({
         'string.empty': 'Le poste est obligatoire'
     }),
-    send_date: Joi.string()
+    job_link: Joi.string()
+    .optional()
+    .messages({
+        'string.empty': 'Le lien est mauvais'
+    }),
+    send_date: Joi.number()
     .required()
     .messages({
-        'string.empty': 'La date est obligatoire'
+        'number.base': 'La date est obligatoire'
     }),
     status: Joi.string()
     .required()
