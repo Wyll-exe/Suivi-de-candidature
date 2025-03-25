@@ -36,3 +36,11 @@ export async function deleteSuiviById(req, res) {
         res.status(500).json({ message : "Le suivi n'existe pas" });
     }
 }
+
+export async function postModifySuivi(req, res) {
+    try {
+        console.log("test");
+    } catch (error) {
+        res.status(500).json({ message : error.message });
+    }
+}
