@@ -20,8 +20,10 @@ return (
             </div>
             <Link className='text-white text-[1.5rem] bottom-[0] absolute' to="/">Retour au Home</Link>
         </div>
-        <div className='pl-[24rem] w-screen'>
-            <h2>vdsd</h2>
+        <div className='pl-[26rem] pt-[10rem] pr-[2rem] w-screen overflow-x-hidden'>
+            <div className='border-2 border-solid border-black h-[100vh]'>
+
+            </div>
         </div>
     </div>
     
