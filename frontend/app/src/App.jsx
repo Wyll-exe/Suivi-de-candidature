@@ -1,7 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router';
+import './style.css';
+import Relance from "./components/Relance";
 
 function App() {
   return (
-  <div className="bg-red-500 w-screen h-[100vh]"></div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Relance />} />
+      </Routes>
+    </BrowserRouter>    
   )
 }
 
