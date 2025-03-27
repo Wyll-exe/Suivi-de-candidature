@@ -45,13 +45,13 @@ function Test() {
             {console.log(test)}
         {loading && <p>Loading...</p>}
         {error && <p>{error.message}</p>}
-    {test?.map(post => (
+        {test?.map(post => (
         <>
         <div>
             <p>{post.society}</p>
             <p>{post.job}</p>
             <p>{post.job_link}</p>
-            <p>{post.send_date}</p>
+            <p>{new Date(post.send_date).toDateString()}</p>
             <p>{post.status}</p>
         </div>
         </>
