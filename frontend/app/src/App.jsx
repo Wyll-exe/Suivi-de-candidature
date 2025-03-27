@@ -1,6 +1,5 @@
 import CreationCandidature from "./components/CreationCandidature";
 import AffichageCandidature from "./components/AffichageCandidature"
-import Test from "./components/Test"
 import { BrowserRouter, Route, Routes } from 'react-router';
 
 function App() {

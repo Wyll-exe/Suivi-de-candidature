@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 function CreationCandidature() {
 
     const [candidature, setCandidature] = useState({
@@ -14,6 +15,7 @@ function CreationCandidature() {
     });
 
     const [error, setError] = useState({}); 
+
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -43,10 +45,12 @@ function CreationCandidature() {
             status: candidature.status
         };
 
+
+
         try {
             const response = await axios.post('http://localhost:3000/api/v1', user);
             console.log(response.data);
-            
+            alert("Votre candidature à été envoyé avec succès !");
         } catch (error) {
             console.error("Erreur", error);
         }
@@ -106,9 +110,9 @@ function CreationCandidature() {
                                     onChange={handleChange} 
                                     required 
                                 />
-                                <input 
-                                    type="text" 
-                                    placeholder='Statut' 
+                                <input className='w-[50%]'
+                                    type="select" 
+                                    placeholder='En attente, Acceptée, Refusée' 
                                     name='status' 
                                     value={candidature.status} 
                                     onChange={handleChange} 
