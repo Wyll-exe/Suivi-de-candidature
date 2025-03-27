@@ -111,7 +111,7 @@ function CreationCandidature() {
                                     required 
                                 />
                                 <input className='w-[50%]'
-                                    type="select" 
+                                    type="text" 
                                     placeholder='En attente, Acceptée, Refusée' 
                                     name='status' 
                                     value={candidature.status} 

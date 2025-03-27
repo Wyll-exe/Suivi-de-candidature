@@ -8,7 +8,6 @@ function App() {
       <Routes>
         <Route path='/' element={<AffichageCandidature />} />
         <Route path='/CreationCandidature' element={<CreationCandidature />} />
-        <Route path='/test' element={<Test />} />
       </Routes>
     </BrowserRouter>
   )
