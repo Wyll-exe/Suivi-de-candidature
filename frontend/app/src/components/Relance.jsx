@@ -2,9 +2,9 @@ import React from 'react'
 
 const Relance = () => {
   return (
-    <div className='flex aboslute justify-center'>
+    <>
 {/* Main */}
-            <div className='w-3/4 h-3/4 bg-gray-900 flex flex-col justify-between mt-[500px]'>
+            <div className='w-300 h-3/4 bg-gray-900 flex flex-col justify-between'>
 
             {/* Barre d'options , recherche */}
                 <div className='w-full h-30 gap-6 bg-gray-800 flex mb-4'>
@@ -43,47 +43,102 @@ const Relance = () => {
                         </div>
 
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 2 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 3 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 4 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 5 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 6 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 7 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 8 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 9 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
                         <div className='flex items-center gap-10'>
-                            <p>Offres 1 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
+                            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                            <button className='submit-2'> SEND </button>
+                        </div>
+                        <div className='flex items-center gap-10'>
+                            <p>Offres 10 - Entreprise / Poste / Non-relancé depuis : 5 J</p>
                             <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
                             <button className='submit-2'> SEND </button>
                         </div>
@@ -92,7 +147,7 @@ const Relance = () => {
                 </div>
 
             </div>
-    </div>
+    </>
 
   )
 }

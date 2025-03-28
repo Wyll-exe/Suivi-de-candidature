@@ -5,12 +5,7 @@ import Relance from "./Relance"
 const Layout = () => {
   return (
     <main>
-        <section>
-{/* Header */}
-        </section>
-
-
-        <section>
+        <section className='flex items-center justify-center'>
 {/* Content */}
         <Relance />
         </section>
@@ -18,7 +13,7 @@ const Layout = () => {
 
         
 {/* Footer */}
-        <footer>
+        <footer className='flex flex-col w-full justify-end'>
             <Footer />
         </footer>
     </main>
