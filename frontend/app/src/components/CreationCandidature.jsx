@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 function CreationCandidature() {
 
     const [candidature, setCandidature] = useState({
