@@ -4,7 +4,7 @@ function Relance() {
   return (
     <>
 {/* Nombres candidatures : Footer */}
-      <div className=''>
+      <div className='z-1'>
           <div className='bg-black flex justify-between h-15 items-center rounded-xs' >
 
               <div className='text-blue-50 justify-items-center ml-3'> 5  <p className='text-green-600'> acceptées </p> </div>

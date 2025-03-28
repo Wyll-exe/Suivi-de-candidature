@@ -1,10 +1,12 @@
 import React from 'react'
 
+
 const Relance = () => {
   return (
     <>
 {/* Main */}
-            <div className='w-300 h-3/4 bg-gray-900 flex flex-col justify-between'>
+            
+            <div className='w-300 h-3/4 bg-gray-900 flex flex-col justify-between z-1'>
 
             {/* Barre d'options , recherche */}
                 <div className='w-full h-30 gap-6 bg-gray-800 flex mb-4'>
