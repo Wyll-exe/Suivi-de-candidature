@@ -1,6 +1,6 @@
 import '../style.css';
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router';
+import { useParams, Link, useNavigate } from 'react-router';
 import axios from 'axios';
 
 
@@ -10,6 +10,7 @@ function Modifier () {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [updated, setUpdated] = useState(false)
+    let navigate = useNavigate();
     
 
     async function fetchTest() {
@@ -77,10 +78,10 @@ function Modifier () {
         };
 
         try {
-            const response = await axios.put(`http://localhost:3000/api/v1/${id}`, user);
-            console.log(response.data);
+            const {data, status } = await axios.put(`http://localhost:3000/api/v1/${id}`, user);
             setUpdated(!updated)
             alert("Votre candidature à été modifier avec succès !");
+            if(status === 200) navigate("/")
         } catch (error2) {
             console.error("Erreur", error2);
         }
@@ -122,20 +123,24 @@ function Modifier () {
                         <p>{test.society}</p>
                     </div>
                     <div className='flex flex-col gap-[1.5rem]'>
-                        <p>Society</p>
+                        <p>job</p>
                         <p>{test.job}</p>
                     </div>
                     <div className='flex flex-col gap-[1.5rem]'>
-                        <p>Society</p>
+                        <p>Lien du job</p>
                         <p>{test.job_link}</p>
                     </div>
                     <div className='flex flex-col gap-[1.5rem]'>
-                        <p>Society</p>
+                        <p>Date</p>
                         <p>{new Date(test.send_date).toDateString()}</p>
                     </div>
                     <div className='flex flex-col gap-[1.5rem]'>
-                        <p>Society</p>
+                        <p>Status</p>
                         <p>{test.status}</p>
+                    </div>
+                    <div className='flex flex-col gap-[1.5rem]'>
+                        <p>Jour de relance</p>
+                        <p>{test.follow}</p>
                     </div>
                 </div>
                 <form className='flex flex-col items-center' onSubmit={handleSubmit}>
@@ -179,7 +184,15 @@ function Modifier () {
                                     onChange={handleChange} 
                                     required 
                                 />
-                                <button type="submit">Valider</button>
+                                <input className='w-[50%]'
+                                    type="number" 
+                                    placeholder='Nombre de jour depuis la candidature' 
+                                    name='follow' 
+                                    value={candidature.follow} 
+                                    onChange={handleChange} 
+                                    required 
+                                />
+                                <button type="submit" onClick={() => deletePost()}>Valider</button>
                             </form>
                 </> ) }
             </div>

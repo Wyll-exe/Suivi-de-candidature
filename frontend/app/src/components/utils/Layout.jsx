@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Footer from "./Footer";
 import Relance from "./Relance";
 import Menu from "./Menu";
+import '../../style.css';
 
 const Layout = () => {
 

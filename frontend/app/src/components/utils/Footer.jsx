@@ -1,4 +1,4 @@
-import '../style.css';
+import '../../style.css';
 import React from 'react';
 
 function Footer({ enAttente, acceptees, refusees, total }) {

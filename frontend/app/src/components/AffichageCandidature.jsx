@@ -52,7 +52,7 @@ function AffichageCandidature() {
                                 <Link className='text-white text-[1.5rem]' to="/CreationCandidature">Ajouter une Candidature</Link>
                             </div>
                             <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                                <Link className='text-white text-[1.5rem]' to="/test">Suivi des relances</Link>
+                                <Link className='text-white text-[1.5rem]' to="/index">Suivi des relances</Link>
                             </div>
                             <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
                                 <h2 className='text-white text-[1.5rem]'>Statistiques</h2>
@@ -88,8 +88,8 @@ function AffichageCandidature() {
                                     <p>{post.status}</p>
                                 </div>
                                 <div className='flex flex-col justify-center gap-[1rem]'>
-                                    <Link to={`/${post._id}`} class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Modifier</Link>
-                                    <Link to={`/1/${post._id}`} class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Supprimer</Link>
+                                    <Link to={`/${post._id}`} className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Modifier</Link>
+                                    <Link to={`/1/${post._id}`} className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Supprimer</Link>
                                 </div>
                             </div>
                             

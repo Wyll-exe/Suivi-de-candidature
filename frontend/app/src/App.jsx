@@ -1,14 +1,8 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router';
-import './style.css';
-import Layout from "./components/Layout";
-import Relance from "./components/Relance";
-import Test from "./components/Test";
-import Menu from "./components/Menu";
+import Relance from "./components/utils/Relance";
 import CreationCandidature from "./components/CreationCandidature";
 import AffichageCandidature from "./components/AffichageCandidature"
 import Modifier from "./components/Modifier"
-import { BrowserRouter, Route, Routes } from 'react-router';
 import Supprimer from "./components/Supprimer";
 
 function App() {
@@ -16,10 +10,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='/layout' element={<Layout />} />
           <Route path='/index' element={<Relance />} />
-          <Route path='/Test' element={<Test />} />
-          <Route path='Menu' element={<Menu />} />
           <Route path='/' element={<AffichageCandidature />} />
           <Route path='/CreationCandidature' element={<CreationCandidature />} />
           <Route path="/:id" element={<Modifier />} />

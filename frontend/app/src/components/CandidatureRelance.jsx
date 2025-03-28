@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useEffect, useState } from 'react'
 
 
-function Test() {  
+function CandidatureRelance() {  
 
     const [test, setTest] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -45,23 +45,23 @@ function Test() {
     return (
         <div>
             {console.log(test)}
-        {loading && <p>Loading...</p>}
-        {error && <p>{error.message}</p>}
-    {test?.map(post => (
-        <>
-        <div className='flex items-center justify-around gap-1'>
-            <p>{post.society}</p>
-            <p>{post.job}</p>
-            <p>{post.follow} j</p>
-            <p>{post.status}</p>
-            <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
-            <button className='submit-2'> SEND </button>
-        </div>
-        </>
-    )) }
+            {loading && <p>Loading...</p>}
+            {error && <p>{error.message}</p>}
+            {test?.map(post => (
+                <>
+                <div className='flex items-center justify-around gap-1'>
+                <p>{post.society}</p>
+                <p>{post.job}</p>
+                <p>{post.follow} j</p>
+                <p>{post.status}</p>
+                <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                <button className='submit-2'> SEND </button>
+            </div>
+            </>
+            )) }
         </div>
     )  
 }
 
-export default Test
+export default CandidatureRelance
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import Test from './Test';
+import CandidatureRelance from '../CandidatureRelance';
+import '../../style.css';
 
 const Relance = () => {
   return (
@@ -15,7 +16,7 @@ const Relance = () => {
                     type="text" 
                     placeholder="Rechercher un poste / entreprise ..." 
                     className="w-full pr-4 bg-amber-50 border-5 border-b-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+                    />
 
 {/* Jours de relance */}
                     <div className='w-35 border-4 flex items-center border-amber-50/0'>
@@ -39,7 +40,7 @@ const Relance = () => {
 
                     <div className='mt-1 space-y-6 '>
 
-                            <Test />
+                            <CandidatureRelance />
 
                     </div> 
                 </div>
