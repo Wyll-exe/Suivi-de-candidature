@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 
+/* Bouton 0 */
+
 .submit {
     background: #fbca1f;
     font-family: inherit;
@@ -23,6 +25,9 @@
     box-shadow: 0.05em 0.05em;
   }
   
+
+/* Bouton 2 */
+
   .submit-2 {
     background: #27806d;
     font-family: inherit;
