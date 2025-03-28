@@ -63,3 +63,15 @@ export async function getSuivibyId(req, res) {
         res.status(500).json({ message : error.message });
     }
 }
+
+export async function getSuivibyFollow(req, res) {
+    try {
+        const follow = await suivi.find({follow: {$gt: 1} });
+        res.status(200).json(follow);
+        if (follow.length === 0) {
+            return res.status(404).json({ message: "Suivi non trouvé" })
+        }
+    } catch (error) {
+        res.status(500).json({ message : error.message });
+    }
+}
