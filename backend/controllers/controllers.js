@@ -51,3 +51,14 @@ export async function postModifySuivi(req, res, next) {
     }
     next()
 }
+
+export async function getSuivibyId(req, res) {
+    try {
+        const get = await suivi.findById({_id: req.params.id}, req.body);
+        if (!get) {
+            return res.status(404).Json({ message: "Suivi non trouvé" })
+        }
+    } catch (error) {
+        res.status(500).json({ message : error.message });
+    }
+}
