@@ -1,10 +1,10 @@
 import '../style.css';
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import React, { useState } from 'react';
 import axios from 'axios';
 
 function CreationCandidature() {
-
+    let navigate = useNavigate();
     const [candidature, setCandidature] = useState({
         society: '',
         job: '',
@@ -47,9 +47,9 @@ function CreationCandidature() {
 
 
         try {
-            const response = await axios.post('http://localhost:3000/api/v1', user);
-            console.log(response.data);
+            const {data, status} = await axios.post('http://localhost:3000/api/v1', user);
             alert("Votre candidature à été envoyé avec succès !");
+            if(status === 201) navigate("/")
         } catch (error) {
             console.error("Erreur", error);
         }

@@ -1,7 +1,8 @@
 import '../style.css';
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useParams, Link } from 'react-router';
 import axios from 'axios';
+
 
 function Modifier () {
     const { id } = useParams();
@@ -9,6 +10,7 @@ function Modifier () {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [updated, setUpdated] = useState(false)
+    
 
     async function fetchTest() {
 
@@ -84,15 +86,32 @@ function Modifier () {
         }
     };
 
+
+
     useEffect(() => {
         fetchTest()
         
     }, [updated])
 
 
-
     return (
       <div>
+            <div className="bg-black w-sm h-[100vh] flex flex-col items-center fixed">
+                <h1 className='text-white text-[2.5rem] p-[2rem]'>Mon Espace</h1>
+                <div className='flex flex-col gap-[4rem] pt-[4rem] w-[100%] h-auto'>
+                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
+                        <Link className='text-white text-[1.5rem]' to="/CreationCandidature">Ajouter une Candidature</Link>
+                    </div>
+                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
+                        <Link className='text-white text-[1.5rem]' to="/test">Suivi des relances</Link>
+                    </div>
+                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
+                        <h2 className='text-white text-[1.5rem]'>Statistiques</h2>
+                    </div>
+                </div>
+                <Link className='text-white text-[1.5rem] bottom-[0] absolute' to="/">Retour au Home</Link>
+            </div>
+            <div className='pl-[26rem]'>
             {loading && <p>Loading...</p>}
             {error && <p>{error.message}</p>}
             {test && (
@@ -163,6 +182,7 @@ function Modifier () {
                                 <button type="submit">Valider</button>
                             </form>
                 </> ) }
+            </div>
         </div>
     )
 }

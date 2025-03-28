@@ -34,7 +34,7 @@ export async function deleteSuiviById(req, res) {
         if (!supp) {
             return res.status(404).json({ message: "Suivi non trouvé" })
         }
-        res.json({message : "Le suivi a bien été supprimés"})
+        res.status(200).json({message : "Le suivi a bien été supprimés"})
     } catch (error) {
         res.status(500).json({ message : error.message });
     }

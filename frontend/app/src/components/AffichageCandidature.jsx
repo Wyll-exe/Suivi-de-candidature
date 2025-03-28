@@ -1,13 +1,14 @@
 import '../style.css';
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { useEffect, useState } from 'react'
+import axios from 'axios';
 
 function AffichageCandidature() {  
 
-    
         const [test, setTest] = useState(null)
         const [loading, setLoading] = useState(true)
         const [error, setError] = useState(null)
+        const [updated, setUpdated] = useState(false)
     
         async function fetchTest() {
     
@@ -34,8 +35,10 @@ function AffichageCandidature() {
             }
         }
 
+
         useEffect(() => {
             fetchTest()
+
         }, [])
     
     
@@ -55,7 +58,7 @@ function AffichageCandidature() {
                                 <h2 className='text-white text-[1.5rem]'>Statistiques</h2>
                             </div>
                         </div>
-                        <Link className='text-white text-[1.5rem] bottom-[0] absolute'>Retour au menu</Link>
+                        <Link className='text-white text-[1.5rem] bottom-[0] absolute' to="/">Retour au Home</Link>
                     </div>
                     <div className='pl-[26rem] pt-[2rem] pr-[2rem] w-screen overflow-x-hidden'>
                         <div className='flex flex-col gap-[4rem]'>
@@ -86,6 +89,7 @@ function AffichageCandidature() {
                                 </div>
                             </div>
                             <Link to={`/${post._id}`}>Modifier</Link>
+                            <Link to={`/1/${post._id}`} >Supprimer</Link>
                             </> )) }
                         </div>
                     </div>
