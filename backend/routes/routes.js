@@ -1,11 +1,12 @@
 // routes
 import express from "express";
-import { postSuivi, getAllSuivi, deleteSuiviById, postModifySuivi, getSuivibyId } from "../controllers/controllers.js";
+import { postSuivi, getAllSuivi, deleteSuiviById, postModifySuivi, getSuivibyId, getSuivibyFollow } from "../controllers/controllers.js";
 
 const router = express.Router()
 
 router.post('/', postSuivi)
 router.get('/', getAllSuivi)
+router.get('/follow', getSuivibyFollow)
 router.delete('/:id', deleteSuiviById)
 router.post('/:id', postModifySuivi)
 router.get('/:id', getSuivibyId)
