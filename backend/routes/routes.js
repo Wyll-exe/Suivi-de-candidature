@@ -8,7 +8,7 @@ router.post('/', postSuivi)
 router.get('/', getAllSuivi)
 router.get('/follow', getSuivibyFollow)
 router.delete('/:id', deleteSuiviById)
-router.post('/:id', postModifySuivi)
+router.put('/:id', postModifySuivi)
 router.get('/:id', getSuivibyId)
 
 export default router;
