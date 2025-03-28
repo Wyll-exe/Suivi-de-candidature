@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Footer from "./Footer";
 import Relance from "./Relance";
+import Menu from "./Menu";
 
 const Layout = () => {
 
@@ -42,7 +43,15 @@ const Layout = () => {
   }, []);
 
   return (
-    <main>
+    <main className=''>
+{/* Header */}
+        <section className='fixed top-0 left-0 z-10 bg-black w-full h-16 rounded-b-sm flex justify-center items-center'>
+            <header>
+                <Menu />
+            </header>
+        </section>
+
+{/* Content */}
       <section className='flex items-center justify-center'>
         <div className='absolute top-0 left-0 w-full min-h-screen bg-black opacity-80'>
           <video
@@ -53,12 +62,11 @@ const Layout = () => {
             <source src="/assets/videos/player.mp4" type="video/mp4" />
           </video>
         </div>
-        {/* Content */}
         <Relance />
       </section>
 
       {/* Footer */}
-      <footer className='flex flex-col w-full justify-end'>
+      <footer className='fixed bottom-0 left-0 flex flex-col w-full justify-end mt-auto'>
         {loading ? (
           <p>loading ..</p>
         ) : error ? (

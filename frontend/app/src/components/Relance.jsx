@@ -7,10 +7,10 @@ const Relance = () => {
 
     <>
 {/* Main */}
-            <div className='w-300 h-3/4 bg-gray-900 flex flex-col justify-items-center z-1'>
+            <div className='w-300 h-99 bg-gray-900 flex flex-col justify-items-center mt-20 z-1'>
 
             {/* Barre d'options , recherche */}
-                <div className='w-full h-30 gap-6 bg-gray-800 flex mb-4'>
+                <div className='w-full h-20 gap-6 bg-gray-800 flex mb-4'>
                     <input 
                     type="text" 
                     placeholder="Rechercher un poste / entreprise ..." 

@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer({ enAttente, acceptees, refusees, total }) {
   return (
-    <div className='z-1'>
+    <div className='mt-auto z-1'>
       <div className='bg-black flex justify-between h-15 items-center rounded-xs'>
         <div className='text-blue-50 justify-items-center ml-3'>
           {acceptees} <p className='text-green-600'>Acceptées</p>
