@@ -33,7 +33,7 @@ function AffichageCandidature() {
                 setLoading(false)
             }
         }
-    
+
         useEffect(() => {
             fetchTest()
         }, [])
@@ -85,6 +85,7 @@ function AffichageCandidature() {
                                     <p>{post.status}</p>
                                 </div>
                             </div>
+                            <Link to={`/${post._id}`}>Modifier</Link>
                             </> )) }
                         </div>
                     </div>
