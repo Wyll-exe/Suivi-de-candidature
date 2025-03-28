@@ -43,7 +43,8 @@ function Modifier () {
         job: '',
         job_link: '',
         send_date: '',
-        status: ''
+        status: '',
+        follow:''
     });
 
     const [error2, setError2] = useState({}); 
@@ -63,6 +64,7 @@ function Modifier () {
         if (!candidature.job_link) formError.job_link = 'Job link est requi';
         if (!candidature.send_date) formError.send_date = 'Send date est requi';
         if (!candidature.status) formError.status = 'Status est requi';
+        if (!candidature.follow) formError.follow = 'Nombre de jour requi';
 
         if (Object.keys(formError).length > 0) {
             setError2(formError);
@@ -74,7 +76,8 @@ function Modifier () {
             job: candidature.job,
             job_link: candidature.job_link,
             send_date: new Date(candidature.send_date).getTime(),
-            status: candidature.status
+            status: candidature.status,
+            follow: candidature.follow
         };
 
         try {

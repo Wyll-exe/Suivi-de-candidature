@@ -30,6 +30,7 @@ function CreationCandidature() {
         if (!candidature.job_link) formError.job_link = 'Job link est requi';
         if (!candidature.send_date) formError.send_date = 'Send date est requi';
         if (!candidature.status) formError.status = 'Status est requi';
+        if (!candidature.follow) formError.follow = 'Nombre de jour requi';
 
         if (Object.keys(formError).length > 0) {
             setError(formError);
@@ -41,7 +42,8 @@ function CreationCandidature() {
             job: candidature.job,
             job_link: candidature.job_link,
             send_date: new Date(candidature.send_date).getTime(),
-            status: candidature.status
+            status: candidature.status,
+            follow: candidature.follow
         };
 
 
@@ -95,7 +97,7 @@ function CreationCandidature() {
                                 />
                                 <input 
                                     type="text" 
-                                    placeholder="Lien vers l\'offre"
+                                    placeholder="Lien vers l'offre"
                                     name='job_link' 
                                     value={candidature.job_link} 
                                     onChange={handleChange} 
@@ -106,6 +108,14 @@ function CreationCandidature() {
                                     placeholder="Date d\'envoi"
                                     name='send_date' 
                                     value={candidature.send_date} 
+                                    onChange={handleChange} 
+                                    required 
+                                />
+                                <input className='w-[50%]'
+                                    type="number" 
+                                    placeholder='Nombre de jour depuis la candidature' 
+                                    name='follow' 
+                                    value={candidature.follow} 
                                     onChange={handleChange} 
                                     required 
                                 />

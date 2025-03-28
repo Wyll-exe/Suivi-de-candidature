@@ -25,7 +25,7 @@ const Relance = () => {
                                 <option key={i + 1} value={i + 1}>
                                     {i + 1}
                                 </option>
-                            ))};
+                            ))}
                         </select>
                         <p className='ml-4 text-amber-50'> Jours </p>
                     </div>

@@ -23,7 +23,7 @@ function CandidatureRelance() {
 
             const response = await fetch(url)
             if (!response.ok) {
-                throw new Error("pas de citation trouvé")
+                throw new Error("Pas de relance trouvé")
             }
 
             
@@ -41,7 +41,6 @@ function CandidatureRelance() {
         fetchTest()
     }, [])
 
-
     return (
         <div>
             {console.log(test)}
@@ -49,16 +48,16 @@ function CandidatureRelance() {
             {error && <p>{error.message}</p>}
             {test?.map(post => (
                 <>
-                <div className='flex items-center justify-around gap-1'>
-                <p>{post.society}</p>
-                <p>{post.job}</p>
-                <p>{post.follow} j</p>
-                <p>{post.status}</p>
-                <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
-                <button className='submit-2'> SEND </button>
-            </div>
-            </>
-            )) }
+                    <div className='flex items-center justify-around gap-1'>
+                        <p>{post.society}</p>
+                        <p>{post.job}</p>
+                        <p>{post.follow} j</p>
+                        <p>{post.status}</p>
+                        <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
+                        <button className='submit-2'> SEND </button>
+                    </div>
+                </>
+            ))}
         </div>
     )  
 }

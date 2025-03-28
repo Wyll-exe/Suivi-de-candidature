@@ -24,7 +24,8 @@ const suiviSchema = new mongoose.Schema({
         required: true
     },
     follow : {
-        type: Number
+        type: Number,
+        default: 0
     }
 })
 
