@@ -56,10 +56,10 @@ export async function postModifySuivi(req, res, next) {
 export async function getSuivibyId(req, res) {
     try {
         const get = await suivi.findById(req.params.id);
-        res.status(200).json(get);
         if (!get) {
             return res.status(404).json({ message: "Suivi non trouvé" })
         }
+        res.status(200).json(get);
     } catch (error) {
         res.status(500).json({ message : error.message });
     }
@@ -68,10 +68,10 @@ export async function getSuivibyId(req, res) {
 export async function getSuivibyFollow(req, res) {
     try {
         const follow = await suivi.find({follow: {$gt: 1} });
-        res.status(200).json(follow);
         if (follow.length === 0) {
             return res.status(404).json({ message: "Suivi non trouvé" })
         }
+        res.status(200).json(follow);
     } catch (error) {
         res.status(500).json({ message : error.message });
     }
