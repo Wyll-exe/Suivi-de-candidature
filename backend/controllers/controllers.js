@@ -32,7 +32,7 @@ export async function deleteSuiviById(req, res) {
     try {
         const supp = await suivi.findByIdAndDelete(req.params.id);
         if (!supp) {
-            return res.status(404).Json({ message: "Suivi non trouvé" })
+            return res.status(404).json({ message: "Suivi non trouvé" })
         }
         res.json({message : "Le suivi a bien été supprimés"})
     } catch (error) {
@@ -44,7 +44,7 @@ export async function postModifySuivi(req, res, next) {
     try {
         const modify = await suivi.findByIdAndUpdate({_id: req.params.id}, req.body);
         if (!modify) {
-            return res.status(404).Json({ message: "Suivi non trouvé" })
+            return res.status(404).json({ message: "Suivi non trouvé" })
         }
     } catch (error) {
         res.status(500).json({ message : error.message });
@@ -54,9 +54,10 @@ export async function postModifySuivi(req, res, next) {
 
 export async function getSuivibyId(req, res) {
     try {
-        const get = await suivi.findById({_id: req.params.id}, req.body);
+        const get = await suivi.findById(req.params.id);
+        res.status(200).json(get);
         if (!get) {
-            return res.status(404).Json({ message: "Suivi non trouvé" })
+            return res.status(404).json({ message: "Suivi non trouvé" })
         }
     } catch (error) {
         res.status(500).json({ message : error.message });
