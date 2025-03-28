@@ -22,6 +22,9 @@ const suiviSchema = new mongoose.Schema({
         type: String,
         enum: ['En attente', 'Acceptée', 'Refusée'],
         required: true
+    },
+    follow : {
+        type: Number
     }
 })
 
@@ -53,6 +56,11 @@ const suiviValidation = Joi.object({
     .messages({
         'string.empty': 'Le status n\'est pas bien définis'
     }),
+    follow: Joi.number()
+    .optional()
+    .messages({
+        'number.base': 'le nombre de jour de relance est mauvais'
+    })
 })
 
 export { suivi, suiviValidation }
