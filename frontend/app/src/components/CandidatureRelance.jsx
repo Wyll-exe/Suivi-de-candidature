@@ -1,66 +1,64 @@
 import '../style.css';
-import { Link } from "react-router";
 import { useEffect, useState } from 'react'
 
 
 function CandidatureRelance() {  
-
-    const [test, setTest] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-    
-    
-
+    const [test, setTest] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     async function fetchTest() {
-
-        
-
-        setLoading(true)
+        setLoading(true);
         try {
-            const url = "http://localhost:3000/api/v1/follow"
-
-
-            const response = await fetch(url)
+            const url = "http://localhost:3000/api/v1/follow";
+            const response = await fetch(url);
             if (!response.ok) {
-                throw new Error("Pas de relance trouvé")
+                throw new Error("Pas de relance trouvé");
             }
-
-            
-            const data = await response.json()
-            setTest(data)
+            const data = await response.json();
+            setTest(data);
         } catch (error) {
-            setError(error)
-            return
+            setError(error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
     useEffect(() => {
-        fetchTest()
-    }, [])
+        fetchTest();
+    }, []);
 
     return (
         <div>
             {console.log(test)}
             {loading && <p>Loading...</p>}
             {error && <p>{error.message}</p>}
-            {test?.map(post => (
-                <>
-                    <div className='flex items-center justify-around gap-1'>
-                        <p>{post.society}</p>
-                        <p>{post.job}</p>
-                        <p>{post.follow} j</p>
-                        <p>{post.status}</p>
-                        <input type="text" placeholder='Date de relance' className= 'bg-cyan-200 border-b-black border-5 w-31'/>
-                        <button className='submit-2'> SEND </button>
+            {test && test.length > 0 ? (
+                test.map((post) => (
+                    <div key={post.id} className='flex justify-evenly border-2 border-solid bg-cyan-200 rounded-[20px] w-[1000px] max-w-[1400px] drop-shadow-2xl'>
+                        <div className='flex flex-col justify-center items-center gap-5'>
+                            <strong>Society</strong>
+                            <p>{post.society}</p>
+                        </div>
+                        <div className='flex flex-col justify-center items-center gap-2'>
+                            <strong>Job</strong>
+                            <p>{post.job}</p>
+                        </div>
+                        <div className='flex flex-col justify-center items-center gap-2'>
+                            <strong>Not re-launched for</strong>
+                            <p>{Number(post.follow)} j</p>
+                        </div>
+                        <div className='flex flex-col justify-center items-center gap-2'>
+                            <strong>Status</strong>
+                            <p>{post.status}</p>
+                        </div>
                     </div>
-                </>
-            ))}
+                ))
+            ) : (
+                <p> Pas de candidatures à relancer </p>
+            )}
         </div>
-    )  
+    );
 }
 
-export default CandidatureRelance
-
+export default CandidatureRelance;
