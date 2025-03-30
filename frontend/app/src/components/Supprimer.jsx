@@ -2,6 +2,7 @@ import '../style.css';
 import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router';
 import axios from 'axios';
+import Header from "./utils/Header"
 
 function Modifier () {
     const { id } = useParams();
@@ -64,28 +65,17 @@ function Modifier () {
 
 
     return (
-      <div>
-            <div className="bg-black w-sm h-[100vh] flex flex-col items-center fixed">
-                <h1 className='text-white text-[2.5rem] p-[2rem]'>Mon Espace</h1>
-                <div className='flex flex-col gap-[4rem] pt-[4rem] w-[100%] h-auto'>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <Link className='text-white text-[1.5rem]' to="/CreationCandidature">Ajouter une Candidature</Link>
-                    </div>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <Link className='text-white text-[1.5rem]' to="/test">Suivi des relances</Link>
-                    </div>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <h2 className='text-white text-[1.5rem]'>Statistiques</h2>
-                    </div>
-                </div>
-                <Link className='text-white text-[1.5rem] bottom-[0] absolute' to="/">Retour au Home</Link>
-            </div>
-            <div className='pl-[26rem]'>
+      <div className='overflow-x-hidden h-[100vh]'>
+            <div>
+                <Header />
+            </div >
+            <div className='h-[100vh] bg-gradient-to-r from-indigo-400 to-cyan-400 flex flex-col items-center pt-[1rem]'>
+            <p class="bg-purple-100 text-purple-800 text-xl font-medium px-[2rem] py-[1rem] rounded-[20px] dark:bg-purple-900 dark:text-purple-300 mb-[4rem]">Page pour Supprimer</p>
             {loading && <p>Loading...</p>}
             {error && <p>{error.message}</p>}
             {test && (
                 <>
-                <div className='flex justify-evenly pt-[2rem] pb-[2rem]'>
+                <div className='flex justify-evenly h-[10rem] pt-[2.7rem] pb-[2rem] border-2 border-solid border-black bg-cyan-200 rounded-[20px] w-[100%] max-w-[1400px] drop-shadow-2xl'>
                    <div className='flex flex-col gap-[1.5rem]'>
                         <p>Society</p>
                         <p>{test.society}</p>
@@ -107,7 +97,9 @@ function Modifier () {
                         <p>{test.status}</p>
                     </div>
                 </div>
-                <button type="submit" onClick={() => deletePost()}>Supprimer</button>
+                <div className='pt-[2rem]'>
+                    <button type="submit" className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={() => deletePost()}>Supprimer</button>
+                </div>
                 </> ) }
             </div>
         </div>

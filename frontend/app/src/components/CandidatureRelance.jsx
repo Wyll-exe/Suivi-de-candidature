@@ -1,5 +1,6 @@
 import '../style.css';
 import { useEffect, useState } from 'react'
+import Header from "./utils/Header"
 
 
 function CandidatureRelance({ data }) {  

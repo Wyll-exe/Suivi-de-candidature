@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CandidatureRelance from '../CandidatureRelance';
+import Header from '../utils/Header';
 import { Link } from "react-router";
 import Footer from './Footer';
 import '../../style.css';
@@ -76,12 +77,10 @@ const Relance = () => {
         <>
 {/* Header */}
             <main className=''>
-                <header className='fixed top-0 left-0 z-10 bg-black w-full h-16 rounded-b-sm flex justify-center items-center'>
-                    <div className='text-yellow-50 text-lg flex flex-row gap-4 z-100'>
-                        <Link to="/" className='submit-3 bg-white px-4 py-2 rounded'> HOME </Link>
-                    </div>
-                </header>
-                <content className='flex items-center justify-center'>
+                <div className='absolute z-10'>
+                    <Header />
+                </div>
+                <content className='flex items-center justify-center pt-[8rem]'>
                     <div className='absolute top-0 left-0 w-full min-h-screen bg-black opacity-80'>
                         <video
                             autoPlay
