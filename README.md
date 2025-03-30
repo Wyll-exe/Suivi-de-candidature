@@ -45,7 +45,7 @@ Réalisation d'un suivi de candidature avec la possibilité de les créer, de le
     npm install
     ```
 
-## Démarrage du backend
+### Démarrage du backend
 
 5. Pour lancer le backend, utilisez la commande suivante :
 
@@ -66,9 +66,11 @@ Réalisation d'un suivi de candidature avec la possibilité de les créer, de le
     npm install
     ```
 
+### Démarrage du frontend
+
 8. Pour lancer le frontend, utilisez la commande suivante :
 
    ```bash
    npm run dev
    ```
-Cela ouvrira l'application dans votre navigateur par défaut à l'adresse `http://localhost:5173`.
+Cela ouvrira l'application dans votre navigateur par défaut à l'adresse http://localhost:5173
