@@ -2,6 +2,7 @@ import '../style.css';
 import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router';
 import axios from 'axios';
+import Header from './utils/Header';
 
 
 function Modifier () {
@@ -99,28 +100,17 @@ function Modifier () {
 
 
     return (
-      <div>
-            <div className="bg-black w-sm h-[100vh] flex flex-col items-center fixed">
-                <h1 className='text-white text-[2.5rem] p-[2rem]'>Mon Espace</h1>
-                <div className='flex flex-col gap-[4rem] pt-[4rem] w-[100%] h-auto'>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <Link className='text-white text-[1.5rem]' to="/CreationCandidature">Ajouter une Candidature</Link>
-                    </div>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <Link className='text-white text-[1.5rem]' to="/test">Suivi des relances</Link>
-                    </div>
-                    <div className='border-y-2 border-solid border-white w-[100%] h-[4rem] flex justify-center items-center'>
-                        <h2 className='text-white text-[1.5rem]'>Statistiques</h2>
-                    </div>
-                </div>
-                <Link className='text-white text-[1.5rem] bottom-[0] absolute' to="/">Retour au Home</Link>
+      <div className='overflow-x-hidden h-[100vh]'>
+            <div>
+                <Header />
             </div>
-            <div className='pl-[26rem]'>
+            <div className='h-[100vh] bg-gradient-to-r from-indigo-400 to-cyan-400 flex flex-col items-center pt-[1rem]'>
+            <p class="bg-purple-100 text-purple-800 text-xl font-medium px-[2rem] py-[1rem] rounded-[20px] dark:bg-purple-900 dark:text-purple-300 mb-[2rem]">Page pour Modifier</p>
             {loading && <p>Loading...</p>}
             {error && <p>{error.message}</p>}
             {test && (
                 <>
-                <div className='flex justify-evenly pt-[2rem] pb-[2rem]'>
+                <div className='flex justify-evenly h-[10rem] pt-[2.7rem] pb-[2rem] border-2 border-solid border-black bg-cyan-200 rounded-[20px] w-[100%] max-w-[1400px] drop-shadow-2xl'>
                    <div className='flex flex-col gap-[1.5rem]'>
                         <p>Society</p>
                         <p>{test.society}</p>
@@ -146,57 +136,67 @@ function Modifier () {
                         <p>{test.follow}</p>
                     </div>
                 </div>
-                <form className='flex flex-col items-center' onSubmit={handleSubmit}>
-                                <input 
-                                    type="text" 
-                                    placeholder='Nom de la société' 
-                                    name='society' 
-                                    value={candidature.society} 
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <input 
-                                    type="text" 
-                                    placeholder='Poste' 
-                                    name='job' 
-                                    value={candidature.job} 
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <input 
-                                    type="text" 
-                                    placeholder="Lien vers l\'offre"
-                                    name='job_link' 
-                                    value={candidature.job_link} 
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <input 
-                                    type="date" 
-                                    placeholder="Date d\'envoi"
-                                    name='send_date' 
-                                    value={candidature.send_date}
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <input className='w-[50%]'
-                                    type="text" 
-                                    placeholder='En attente, Acceptée, Refusée' 
-                                    name='status' 
-                                    value={candidature.status} 
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <input className='w-[50%]'
-                                    type="number" 
-                                    placeholder='Nombre de jour depuis la candidature' 
-                                    name='follow' 
-                                    value={candidature.follow} 
-                                    onChange={handleChange} 
-                                    required 
-                                />
-                                <button type="submit" onClick={() => deletePost()}>Valider</button>
-                            </form>
+                <div className='border-2 bg-gradient-to-r from-blue-200 to-cyan-200 border-solid rounded-[20px] border-black w-[20rem] mt-[2rem]'>
+                    <form className='flex flex-col items-center' onSubmit={handleSubmit}>
+                                <div className='h-[500px] flex flex-col items-center justify-evenly'>
+                                    <input 
+                                        type="text" 
+                                        placeholder='Nom de la société' 
+                                        name='society' 
+                                        value={candidature.society} 
+                                        onChange={handleChange} 
+                                        required 
+                                        className='bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                    <input 
+                                        type="text" 
+                                        placeholder='Poste' 
+                                        name='job' 
+                                        value={candidature.job} 
+                                        onChange={handleChange} 
+                                        required 
+                                        className='bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                    <input 
+                                        type="text" 
+                                        placeholder="Lien vers l\'offre"
+                                        name='job_link' 
+                                        value={candidature.job_link} 
+                                        onChange={handleChange} 
+                                        required 
+                                        className='bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                    <input 
+                                        type="date" 
+                                        placeholder="Date d\'envoi"
+                                        name='send_date' 
+                                        value={candidature.send_date}
+                                        onChange={handleChange} 
+                                        required 
+                                        className='bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                    <input
+                                        type="text" 
+                                        placeholder='En attente, Acceptée, Refusée' 
+                                        name='status' 
+                                        value={candidature.status} 
+                                        onChange={handleChange} 
+                                        required 
+                                        className='w-[50%] bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                    <input
+                                        type="number" 
+                                        placeholder='Nombre de jour depuis la candidature' 
+                                        name='follow' 
+                                        value={candidature.follow} 
+                                        onChange={handleChange} 
+                                        required 
+                                        className='w-[50%] bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-[20px] px-[1rem] py-[.2rem]'
+                                    />
+                                </div>
+                                <button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={() => deletePost()}>Valider</button>
+                    </form>
+                </div>
                 </> ) }
             </div>
         </div>
